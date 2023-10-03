@@ -2,11 +2,8 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.interface';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import { config } from 'dotenv';
 
 import { AppModule } from './app.module';
-
-config();
 
 const API_PREFIX = 'api' as const;
 const PORT = process.env.PORT || 3333;
