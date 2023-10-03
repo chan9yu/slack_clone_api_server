@@ -12,8 +12,8 @@ import {
 } from 'typeorm';
 
 import { ChannelEntity } from '../../channels/entities';
-import { UserEntity } from '../../users/entities';
 import { DMEntity } from '../../dms/entities';
+import { UserEntity } from '../../users/entities';
 import { WorkspaceMemberEntity } from './workspace.member.entity';
 
 @Entity({ name: 'workspace' })
@@ -40,7 +40,7 @@ export class WorkspaceEntity {
 	@Column('uuid', { name: 'ownerId', nullable: true })
 	ownerId: string | null;
 
-	/** 워크스페이스 소유자 */
+	/** 워크스페이스 소유자 정보 */
 	@ManyToOne(() => UserEntity, user => user.ownedWorkspaces, {
 		onDelete: 'SET NULL',
 		onUpdate: 'CASCADE'

@@ -1,10 +1,21 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, UpdateDateColumn } from 'typeorm';
+import {
+	Column,
+	CreateDateColumn,
+	Entity,
+	JoinColumn,
+	ManyToOne,
+	PrimaryGeneratedColumn,
+	UpdateDateColumn
+} from 'typeorm';
 
-import { ChannelEntity } from './channel.entity';
 import { UserEntity } from 'src/users/entities';
+import { ChannelEntity } from './channel.entity';
 
 @Entity({ name: 'channelMember' })
 export class ChannelMemberEntity {
+	@PrimaryGeneratedColumn('uuid')
+	id: string;
+
 	@CreateDateColumn()
 	createdAt: Date;
 

@@ -1,10 +1,21 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, UpdateDateColumn } from 'typeorm';
+import {
+	Column,
+	CreateDateColumn,
+	Entity,
+	JoinColumn,
+	ManyToOne,
+	PrimaryGeneratedColumn,
+	UpdateDateColumn
+} from 'typeorm';
 
 import { UserEntity } from '../../users/entities';
 import { WorkspaceEntity } from './workspace.entity';
 
 @Entity({ name: 'workspaceMember' })
 export class WorkspaceMemberEntity {
+	@PrimaryGeneratedColumn('uuid')
+	id: string;
+
 	@CreateDateColumn()
 	createdAt: Date;
 
