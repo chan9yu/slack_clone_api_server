@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-# Slack 클론코딩 API
+# 🧑🏻‍💻 Slack 클론코딩 API
 
 > slack clone project api server with nestjs.
 
@@ -12,7 +12,17 @@
 
 <br />
 
-## Tech Stack
+## 🔗 Link
+
+- [Front End Repository](https://chan9yu.github.io/slack_clone/)
+
+<p align="right">
+  <a href="#readme-top">맨 위로</a>
+</p>
+
+<br />
+
+## 🔧 Tech Stack
 
 - <img src="https://img.shields.io/badge/nodejs-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
 - <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
@@ -28,7 +38,7 @@
   <a href="#readme-top">맨 위로</a>
 </p>
 
-## Getting Started
+## 🚀 Getting Started
 
 로컬환경에서 앱을 실행하는 방법입니다.
 
