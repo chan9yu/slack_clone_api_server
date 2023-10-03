@@ -18,6 +18,8 @@
 - <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
 - <img src="https://img.shields.io/badge/nestjs-E0234E?style=for-the-badge&logo=nestjs&logoColor=white">
 - <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+- <img src="https://img.shields.io/badge/mariadb-003545?style=for-the-badge&logo=mariadb&logoColor=white">
+- <img src="https://img.shields.io/badge/typeorm-fd0b02?style=for-the-badge&logo=typeorm&logoColor=white">
 - <img src="https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white">
 - <img src="https://img.shields.io/badge/cloudtype-000000?style=for-the-badge&logo=&logoColor=white">
 - <img src="https://img.shields.io/badge/githubactions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white">
@@ -37,9 +39,16 @@
 0. .env.example 기준으로 .env 파일 생성
 
 ```shell
-PORT=3050
-APP_URL=...
-DEV_URL=...
+# APP ENV
+HOST=MY_HOST
+PORT=MY_PORT
+
+# DATABASE ENV
+DB_HOST=MY_DB_HOST
+DB_PORT=MY_DB_PORT
+DB_USERNAME=MY_DB_USERNAME
+DB_PASSWORD=MY_DB_PASSWORD
+DB_DATABASE=MY_DB_DATABASE
 ```
 
 1. pnpm install
