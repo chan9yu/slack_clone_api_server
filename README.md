@@ -2,7 +2,7 @@
 
 # Slack 클론코딩 API
 
-> slack clone api server with nestjs.
+> slack clone project api server with nestjs.
 
 <!-- [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fchan9yu%2Fdaily_look_server&count_bg=%23E0234E&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) -->
 
