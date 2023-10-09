@@ -1,29 +1,48 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+	Body,
+	ClassSerializerInterceptor,
+	Controller,
+	Get,
+	Post,
+	Request,
+	UseGuards,
+	UseInterceptors
+} from '@nestjs/common';
 
-import { SignupRequestDto } from './dto/signup.request.dto';
+import type { JwtPayload } from '../@types';
+import { AuthService } from '../auth/auth.service';
+import { JwtAuthGuard, LocalAuthGuard } from '../auth/guards';
+import { UserInfo } from '../common';
+import { CreateUserDto } from './dto';
 import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
-	constructor(private usersService: UsersService) {}
+	constructor(
+		private readonly authService: AuthService,
+		private readonly usersService: UsersService
+	) {}
 
 	@Get()
+	@UseInterceptors(ClassSerializerInterceptor)
 	async getUsers() {
 		return await this.usersService.getUsers();
 	}
 
-	@Post()
-	async signup(@Body() body: SignupRequestDto) {
-		return await this.usersService.signup(body);
+	@UseGuards(JwtAuthGuard)
+	@Get('my-info')
+	async getMyInfo(@UserInfo() userInfo: JwtPayload) {
+		return userInfo;
 	}
 
+	@Post('signup')
+	async signup(@Body() body: CreateUserDto) {
+		return await this.usersService.createUser(body);
+	}
+
+	@UseGuards(LocalAuthGuard)
 	@Post('login')
-	async login() {
-		return await this.usersService.login();
-	}
-
-	@Post('logout')
-	async logout() {
-		return await this.usersService.logout();
+	async login(@Request() req: { user: JwtPayload }) {
+		return await this.authService.login(req.user);
 	}
 }
