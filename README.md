@@ -38,6 +38,14 @@
   <a href="#readme-top">맨 위로</a>
 </p>
 
+## ERD
+
+<img src="https://github.com/chan9yu/chan9yu/blob/master/images/project/slack_clone_ERD.png?raw=true" height="650">
+
+<p align="right">
+  <a href="#readme-top">맨 위로</a>
+</p>
+
 ## 🚀 Getting Started
 
 로컬환경에서 앱을 실행하는 방법입니다.
@@ -52,6 +60,8 @@
 # APP ENV
 HOST=MY_HOST
 PORT=MY_PORT
+APP_URL=MY_APP_URL
+DEV_URL=MY_DEV_URL
 
 # DATABASE ENV
 DB_HOST=MY_DB_HOST

@@ -29,10 +29,10 @@ export class UsersController {
 		return await this.usersService.getUsers();
 	}
 
-	@UseGuards(JwtAuthGuard)
 	@Get('my-info')
+	@UseGuards(JwtAuthGuard)
 	async getMyInfo(@UserInfo() userInfo: JwtPayload) {
-		return userInfo;
+		return await this.usersService.getMyInfo(userInfo);
 	}
 
 	@Post('signup')
@@ -40,8 +40,8 @@ export class UsersController {
 		return await this.usersService.createUser(body);
 	}
 
-	@UseGuards(LocalAuthGuard)
 	@Post('login')
+	@UseGuards(LocalAuthGuard)
 	async login(@Request() req: { user: JwtPayload }) {
 		return await this.authService.login(req.user);
 	}
