@@ -26,7 +26,7 @@ export class UserEntity {
 	@Column('varchar', { name: 'nickname', length: 30 })
 	nickname: string;
 
-	@Column('varchar', { name: 'password', length: 100 })
+	@Column('varchar', { name: 'password', length: 100, select: false })
 	@Exclude()
 	password: string;
 
