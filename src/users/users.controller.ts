@@ -32,7 +32,7 @@ export class UsersController {
 	@Get('my-info')
 	@UseGuards(JwtAuthGuard)
 	async getMyInfo(@UserInfo() userInfo: JwtPayload) {
-		return userInfo;
+		return await this.usersService.getMyInfo(userInfo);
 	}
 
 	@Post('signup')
