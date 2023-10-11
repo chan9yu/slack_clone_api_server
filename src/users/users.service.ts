@@ -31,8 +31,8 @@ export class UsersService {
 
 	public async createUser(data: CreateUserDto) {
 		const { email, nickname, password } = data;
-
 		const user = await this.findUserByEmail(email);
+
 		if (user) {
 			const response = { errorCode: AUTH_EXCEPTION_CODE_ENUM.EMAIL_EXISTS };
 			throw new HttpException(response, HttpStatus.UNAUTHORIZED);
@@ -45,6 +45,11 @@ export class UsersService {
 			password: hashedPassword
 		};
 
-		return await this.userRepository.save(createUserData);
+		await this.userRepository.save(createUserData);
+
+		return {
+			statusCode: 200,
+			message: 'success'
+		};
 	}
 }
