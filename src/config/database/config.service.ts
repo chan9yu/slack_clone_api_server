@@ -13,14 +13,14 @@ export class MariaDBConfigService implements TypeOrmOptionsFactory {
 
 		return {
 			type: 'mariadb',
+			host: dbConfig.host,
+			port: dbConfig.port,
 			username: dbConfig.username,
 			password: dbConfig.password,
-			port: dbConfig.port,
-			host: dbConfig.host,
 			database: dbConfig.database,
-			// autoLoadEntities: true,
-			entities: ['dist/**/**/*.entity{.ts,.js}'],
 			synchronize: false,
+			autoLoadEntities: true,
+			entities: ['dist/**/**/*.entity{.ts,.js}'],
 			logging: true
 		};
 	}

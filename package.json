@@ -19,23 +19,6 @@
 			"path": "cz-conventional-changelog"
 		}
 	},
-	"jest": {
-		"moduleFileExtensions": [
-			"js",
-			"json",
-			"ts"
-		],
-		"rootDir": "src",
-		"testRegex": ".*\\.spec\\.ts$",
-		"transform": {
-			"^.+\\.(t|j)s$": "ts-jest"
-		},
-		"collectCoverageFrom": [
-			"**/*.(t|j)s"
-		],
-		"coverageDirectory": "../coverage",
-		"testEnvironment": "node"
-	},
 	"scripts": {
 		"build": "nest build",
 		"format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -49,6 +32,8 @@
 		"test:cov": "jest --coverage",
 		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
 		"test:e2e": "jest --config ./test/jest-e2e.json",
+		"seed:run": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:run",
+		"seed:create": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:create",
 		"commit": "pnpm git-cz",
 		"prepare": "husky install",
 		"husky:permission": "chmod +x .husky/*"
@@ -66,13 +51,15 @@
 		"class-transformer": "^0.5.1",
 		"class-validator": "^0.14.0",
 		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
 		"mysql2": "^3.6.1",
 		"passport": "^0.6.0",
 		"passport-jwt": "^4.0.1",
 		"passport-local": "^1.0.0",
 		"reflect-metadata": "^0.1.13",
 		"rxjs": "^7.2.0",
-		"typeorm": "^0.3.17"
+		"typeorm": "^0.3.17",
+		"typeorm-extension": "^3.0.2"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.7.1",
@@ -101,8 +88,8 @@
 		"source-map-support": "^0.5.20",
 		"supertest": "^6.1.3",
 		"ts-jest": "29.0.5",
-		"ts-loader": "^9.2.3",
-		"ts-node": "^10.0.0",
+		"ts-loader": "^9.5.0",
+		"ts-node": "^10.9.1",
 		"tsconfig-paths": "4.2.0",
 		"typescript": "^4.7.4"
 	}

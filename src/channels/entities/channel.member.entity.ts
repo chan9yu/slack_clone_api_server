@@ -8,7 +8,7 @@ import {
 	UpdateDateColumn
 } from 'typeorm';
 
-import { UserEntity } from 'src/users/entities';
+import { UserEntity } from '../../users/entities';
 import { ChannelEntity } from './channel.entity';
 
 @Entity({ name: 'channelMember' })
