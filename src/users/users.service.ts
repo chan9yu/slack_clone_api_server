@@ -72,12 +72,12 @@ export class UsersService {
 
 			await queryRunner.manager.getRepository(WorkspaceMemberEntity).save({
 				userId: newUser.id,
-				workspaceId: 'welcome'
+				workspaceId: '1'
 			});
 
 			await queryRunner.manager.getRepository(ChannelMemberEntity).save({
 				userId: newUser.id,
-				channelId: 'welcome'
+				channelId: '1'
 			});
 
 			await queryRunner.commitTransaction();
